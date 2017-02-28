@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>排序测试</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+
+    <script>
+        //var arr = ["sp14", "su15", "fa12", "ho15", "ho14", "sp13"];
+        var arr = ["sp14", "su15", "fa14", "ho15"];
+
+        console.log("排序前："+arr);
+
+        var obj = {
+            "sp": 1,
+            "su": 2,
+            "fa": 3,
+            "ho": 4
+        };
+        for (var i = 0; i < arr.length-1; i++) {
+            for (var j = 0; j < arr.length - i-1; j++) {
+                var years = arr[j].slice(-2);
+                var nexty = arr[j + 1].slice(-2);
+                if (years > nexty) {
+                    var tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }     
+        }
+
+        //console.log("年份排序：" + arr);
+
+
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                var m = arr[j].slice(0, -2);
+                var mounths = obj[`${m}`];
+             
+                var nextm = arr[j + 1].slice(0, -2);
+                var netxmounth = obj[`${nextm}`];
+
+
+                var years = arr[j].slice(-2);
+                var nexty = arr[j + 1].slice(-2);
+
+                if (years == nexty) {
+                    //console.log("年份相同")
+                    if (mounths > netxmounth) {
+                        //console.log("季节交换");
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+
+                }
+            }
+        }
+
+        console.log("排序后:"+arr);
+
+
+    </script>
+</body>
+</html>
