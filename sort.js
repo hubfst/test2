@@ -12,4 +12,5 @@ var obj={
 for(var i=0;i<arr.length;i++){
      var years=arr[i].slice(-2,2);
      console.log(years);
+     console.log("这是一个测试文件");	
 }
